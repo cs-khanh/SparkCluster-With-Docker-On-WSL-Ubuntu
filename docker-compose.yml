@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  spark-master:
+    container_name: da-spark-master
+    build: .
+    image: da-spark-image
+    entrypoint: ['./entrypoint.sh', 'master']
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    volumes:
+      - ./book_data:/opt/spark/data 
+      - ./spark-apps:/opt/spark/apps
+      - ./spark-logs:/opt/spark-events
+    env_file:
+      - .env.spark
+    ports:
+      - "0.0.0.0:8080:8080"  # Spark Master Web UI
+      - "0.0.0.0:7077:7077"  # Spark Master Port
+
+  spark-history-server:
+    container_name: da-spark-history
+    image: da-spark-image
+    entrypoint: ['./entrypoint.sh', 'history']
+    depends_on:
+      - spark-master
+    volumes:
+      - ./spark-logs:/opt/spark-events
+    env_file:
+      - .env.spark
+    ports:
+      - "0.0.0.0:18080:18080"  # Spark History Server Web UI
+
+  spark-worker:
+    image: da-spark-image
+    entrypoint: ['./entrypoint.sh', 'worker']
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_WORKER_CORES=${SPARK_WORKER_CORES:-1}
+      - SPARK_WORKER_MEMORY=${SPARK_WORKER_MEMORY:-1g}
+      # Không đặt cố định SPARK_WORKER_WEBUI_PORT để tránh xung đột khi có nhiều worker
+    env_file:
+      - .env.spark
+    volumes:
+      - ./book_data:/opt/spark/data
+      - ./spark-apps:/opt/spark/apps
+      - ./spark-logs:/opt/spark-events
+    ports:
+      # Sử dụng ports dynamic để tránh xung đột 
+      # Docker sẽ tự động map cổng nội bộ 8081 ra cổng host bất kỳ
+      - "8081"
+
+volumes:
+  spark-logs:
