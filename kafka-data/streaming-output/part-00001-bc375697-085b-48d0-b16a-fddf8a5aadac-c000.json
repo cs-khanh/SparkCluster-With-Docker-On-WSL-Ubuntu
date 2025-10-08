@@ -1,0 +1,4 @@
+{"key":"user_433","kafka_timestamp":"2025-10-08T04:30:01.674Z","timestamp":"2025-10-08T04:30:01.674Z","user_id":"user_433","product_id":"home_kitchen_41","quantity":4,"price":332.6,"category":"Home"}
+{"key":"user_530","kafka_timestamp":"2025-10-08T04:30:03.056Z","timestamp":"2025-10-08T04:30:03.056Z","user_id":"user_530","product_id":"books_textbook_42","quantity":2,"price":214.11,"category":"Books"}
+{"key":"user_397","kafka_timestamp":"2025-10-08T04:30:08.659Z","timestamp":"2025-10-08T04:30:08.658Z","user_id":"user_397","product_id":"clothing_shirt_43","quantity":1,"price":129.53,"category":"Clothing"}
+{"key":"user_62","kafka_timestamp":"2025-10-08T04:30:13.840Z","timestamp":"2025-10-08T04:30:13.840Z","user_id":"user_62","product_id":"clothing_shoes_97","quantity":4,"price":289.04,"category":"Clothing"}

@@ -1,0 +1,6 @@
+{"key":"user_7","kafka_timestamp":"2025-10-08T04:31:00.575Z","timestamp":"2025-10-08T04:31:00.575Z","user_id":"user_7","product_id":"clothing_pants_92","quantity":3,"price":334.62,"category":"Clothing"}
+{"key":"user_324","kafka_timestamp":"2025-10-08T04:31:12.488Z","timestamp":"2025-10-08T04:31:12.488Z","user_id":"user_324","product_id":"sports_accessories_90","quantity":1,"price":166.32,"category":"Sports"}
+{"key":"user_790","kafka_timestamp":"2025-10-08T04:31:16.976Z","timestamp":"2025-10-08T04:31:16.976Z","user_id":"user_790","product_id":"sports_equipment_95","quantity":5,"price":202.4,"category":"Sports"}
+{"key":"user_915","kafka_timestamp":"2025-10-08T04:31:19.814Z","timestamp":"2025-10-08T04:31:19.814Z","user_id":"user_915","product_id":"clothing_hat_75","quantity":5,"price":79.31,"category":"Clothing"}
+{"key":"user_817","kafka_timestamp":"2025-10-08T04:31:20.929Z","timestamp":"2025-10-08T04:31:20.929Z","user_id":"user_817","product_id":"books_novel_7","quantity":5,"price":316.03,"category":"Books"}
+{"key":"user_284","kafka_timestamp":"2025-10-08T04:31:23.067Z","timestamp":"2025-10-08T04:31:23.066Z","user_id":"user_284","product_id":"electronics_headphones_53","quantity":4,"price":190.8,"category":"Electronics"}

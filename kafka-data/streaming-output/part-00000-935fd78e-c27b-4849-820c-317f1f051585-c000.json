@@ -1,0 +1,5 @@
+{"key":"user_892","kafka_timestamp":"2025-10-08T04:50:21.572Z","timestamp":"2025-10-08T04:50:21.572Z","user_id":"user_892","product_id":"sports_equipment_63","quantity":5,"price":323.98,"category":"Sports"}
+{"key":"user_663","kafka_timestamp":"2025-10-08T04:50:23.567Z","timestamp":"2025-10-08T04:50:23.566Z","user_id":"user_663","product_id":"home_kitchen_45","quantity":3,"price":267.78,"category":"Home"}
+{"key":"user_318","kafka_timestamp":"2025-10-08T04:50:28.613Z","timestamp":"2025-10-08T04:50:28.613Z","user_id":"user_318","product_id":"home_bedding_29","quantity":1,"price":218.89,"category":"Home"}
+{"key":"user_437","kafka_timestamp":"2025-10-08T04:50:39.741Z","timestamp":"2025-10-08T04:50:39.741Z","user_id":"user_437","product_id":"home_furniture_16","quantity":5,"price":459.78,"category":"Home"}
+{"key":"user_690","kafka_timestamp":"2025-10-08T04:50:46.255Z","timestamp":"2025-10-08T04:50:46.255Z","user_id":"user_690","product_id":"food_fruits_99","quantity":5,"price":165.03,"category":"Food"}

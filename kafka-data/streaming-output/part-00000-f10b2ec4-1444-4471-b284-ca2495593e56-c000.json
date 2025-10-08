@@ -1,0 +1,2 @@
+{"key":"user_627","kafka_timestamp":"2025-10-08T04:53:06.059Z","timestamp":"2025-10-08T04:53:06.059Z","user_id":"user_627","product_id":"books_biography_31","quantity":4,"price":184.09,"category":"Books"}
+{"key":"user_508","kafka_timestamp":"2025-10-08T04:53:08.567Z","timestamp":"2025-10-08T04:53:08.567Z","user_id":"user_508","product_id":"food_meat_99","quantity":3,"price":422.27,"category":"Food"}

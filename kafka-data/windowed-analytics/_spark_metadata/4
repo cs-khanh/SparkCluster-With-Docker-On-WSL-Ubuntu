@@ -1,0 +1,5 @@
+v1
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00000-9de868d6-ef5f-478b-871a-484aac4721f6-c000.json","size":0,"isDir":false,"modificationTime":1759897981288,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00040-5cf1c74a-9358-40cd-be2f-6695e75eab6b-c000.json","size":163,"isDir":false,"modificationTime":1759897981907,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00060-ed150372-c91d-410a-9452-33bf25d9c7e5-c000.json","size":169,"isDir":false,"modificationTime":1759897982054,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00193-eb3cf6e8-d8fc-4426-84ed-c0d921eeb571-c000.json","size":164,"isDir":false,"modificationTime":1759897984015,"blockReplication":1,"blockSize":33554432,"action":"add"}

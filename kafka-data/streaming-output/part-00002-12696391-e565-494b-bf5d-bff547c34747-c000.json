@@ -1,0 +1,4 @@
+{"key":"user_45","kafka_timestamp":"2025-10-08T04:31:06.403Z","timestamp":"2025-10-08T04:31:06.402Z","user_id":"user_45","product_id":"electronics_camera_100","quantity":4,"price":110.98,"category":"Electronics"}
+{"key":"user_40","kafka_timestamp":"2025-10-08T04:31:10.363Z","timestamp":"2025-10-08T04:31:10.363Z","user_id":"user_40","product_id":"sports_equipment_4","quantity":1,"price":494.93,"category":"Sports"}
+{"key":"user_754","kafka_timestamp":"2025-10-08T04:31:15.075Z","timestamp":"2025-10-08T04:31:15.075Z","user_id":"user_754","product_id":"clothing_hat_21","quantity":4,"price":19.21,"category":"Clothing"}
+{"key":"user_784","kafka_timestamp":"2025-10-08T04:31:24.882Z","timestamp":"2025-10-08T04:31:24.882Z","user_id":"user_784","product_id":"sports_clothing_54","quantity":2,"price":103.72,"category":"Sports"}

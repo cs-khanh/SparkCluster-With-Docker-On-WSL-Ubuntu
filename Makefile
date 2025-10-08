@@ -33,6 +33,22 @@ help:
 	@echo "  make scale-workers WORKERS=<số lượng> - Scale worker lên số lượng chỉ định (không down trước)"
 	@echo "  make run-config WORKERS=<số lượng> CORES=<số cores> MEMORY=<bộ nhớ> - Start cluster với số worker và cấu hình chỉ định"
 	@echo "  make run-config-d WORKERS=<số lượng> CORES=<số cores> MEMORY=<bộ nhớ> - Start cluster (detached) với cấu hình"
+	@echo ""
+	@echo "Kafka Streaming commands:"
+	@echo "  make create-kafka-topic - Create Kafka topic for streaming"
+	@echo "  make submit-streaming   - Submit basic streaming application (local mode)"
+	@echo "  make submit-streaming-cluster - Submit advanced streaming application (cluster mode)"
+	@echo "  make start-producer     - Start Kafka producer to generate test data"
+	@echo "  make streaming-start    - Start streaming application with proper management"
+	@echo "  make streaming-stop     - Stop all running streaming applications properly"
+	@echo "  make streaming-stop-app app=<app-id> - Stop a specific Spark application by ID"
+	@echo "  make streaming-restart  - Restart streaming applications"
+	@echo "  make streaming-status   - Check status of streaming applications"
+	@echo "  make streaming-cleanup  - Clean up stuck .inprogress files and restart History Server"
+	@echo "  make kafka-console-consumer - Monitor Kafka messages"
+	@echo "  make kafka-list-topics  - List all Kafka topics"
+	@echo "  make check-streaming-data - Check streaming output files in kafka-data"
+	@echo "  make clean-streaming-data - Clean all streaming output data"
 
 # Build the Docker images
 build:
@@ -45,6 +61,10 @@ build-progress:
 
 down:
 	$(COMPOSE) down --volumes
+	
+force-down:
+	$(COMPOSE) down --volumes
+	docker rm -f $$(docker ps -a -q --filter "name=sparkcluster" --filter "name=da-spark") 2>/dev/null || true
 
 run:
 	make down && $(COMPOSE) up
@@ -167,4 +187,88 @@ worker-ports:
 	@docker ps --filter "name=spark-worker" --format "table {{.Names}}\t{{.Ports}}" | grep -v "^CONTAINER"
 
 submit:
-	docker exec $(SPARK_MASTER) spark-submit --master spark://spark-master:7077 --deploy-mode client ./apps/${app}
+	@if [ -z "$(app)" ]; then \
+		echo "Sử dụng: make submit app=<tên_file_ứng_dụng>, ví dụ: make submit app=example.py"; \
+	else \
+		docker exec $(SPARK_MASTER) spark-submit --master spark://spark-master:7077 --deploy-mode client /opt/spark/apps/$(app); \
+	fi
+
+# Kafka streaming commands
+create-kafka-topic:
+	./create_kafka_topic.sh
+
+start-producer:
+	docker exec -it $(SPARK_MASTER) python3 ./apps/kafka_producer.py
+
+# Quản lý streaming jobs
+streaming-start:
+	./streaming_manager.sh start
+
+streaming-stop:
+	./streaming_manager.sh stop
+
+streaming-restart:
+	./streaming_manager.sh restart
+
+streaming-status:
+	./streaming_manager.sh status
+
+# Dừng một ứng dụng Spark cụ thể dựa trên application ID
+streaming-stop-app:
+	@if [ -z "$(app)" ]; then \
+		echo "Sử dụng: make streaming-stop-app app=<application-id>, ví dụ: make streaming-stop-app app=app-20251008045016-0001"; \
+	else \
+		./streaming_manager.sh stop-app $(app); \
+	fi
+	
+# Dọn dẹp các file inprogress và khởi động lại History Server
+streaming-cleanup:
+	@echo "Cleaning up stuck .inprogress files and restarting History Server..."
+	@docker exec $(SPARK_MASTER) bash -c 'for f in /opt/spark-events/*.inprogress; do mv "$$f" "$${f%.inprogress}" 2>/dev/null; done || true'
+	@docker restart $(SPARK_HISTORY)
+	@echo "Waiting for History Server to restart..."
+	@sleep 3
+	@echo "Done! Please refresh your History Server UI."
+
+submit-streaming:
+	@if [ -z "$(app)" ]; then \
+		echo "Sử dụng: make submit-streaming app=<tên_file_ứng_dụng>, ví dụ: make submit-streaming app=test_streaming_cluster.py"; \
+	else \
+		docker exec $(SPARK_MASTER) spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0 --master spark://spark-master:7077 --deploy-mode client /opt/spark/apps/$(app); \
+	fi
+
+# Kafka utilities
+kafka-console-consumer:
+	docker exec -it $(shell docker ps -qf "name=sparkcluster-kafka") /usr/bin/kafka-console-consumer \
+		--topic sales-events \
+		--bootstrap-server localhost:9092 \
+		--from-beginning
+
+kafka-list-topics:
+	docker exec -it $(shell docker ps -qf "name=sparkcluster-kafka") /usr/bin/kafka-topics \
+		--list --bootstrap-server localhost:9092
+
+# Check streaming output data
+check-streaming-data:
+	@echo "=== Raw streaming data ==="
+	@ls -la ./kafka-data/streaming-output/ 2>/dev/null || echo "No raw data yet"
+	@echo ""
+	@echo "=== Windowed analytics data ==="  
+	@ls -la ./kafka-data/windowed-analytics/ 2>/dev/null || echo "No analytics data yet"
+	@echo ""
+	@echo "=== Checkpoints ==="
+	@ls -la ./kafka-data/checkpoints/ 2>/dev/null || echo "No checkpoints yet"
+
+clean-streaming-data:
+	@echo "Cleaning streaming output data..."
+	@rm -rf ./kafka-data/streaming-output/ ./kafka-data/windowed-analytics/ ./kafka-data/checkpoints/
+	@echo "Done!"
+
+# Lệnh để kiểm tra cấu hình Java và hệ thống trước khi chạy
+check-env:
+	@echo "Checking Java and system configuration on master..."
+	docker exec $(SPARK_MASTER) /bin/bash -c "java -XX:+PrintFlagsFinal -version | grep -E 'MaxHeapSize|InitialHeapSize'"
+	docker exec $(SPARK_MASTER) /bin/bash -c "free -h && df -h && ulimit -a"
+	@echo "\nChecking Java and system configuration on worker 1..."
+	docker exec sparkcluster-spark-worker-1 /bin/bash -c "java -XX:+PrintFlagsFinal -version | grep -E 'MaxHeapSize|InitialHeapSize'"
+	docker exec sparkcluster-spark-worker-1 /bin/bash -c "free -h && df -h && ulimit -a"

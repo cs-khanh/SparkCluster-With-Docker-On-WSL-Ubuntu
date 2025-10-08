@@ -1,0 +1,3 @@
+{"key":"user_669","kafka_timestamp":"2025-10-08T04:50:25.059Z","timestamp":"2025-10-08T04:50:25.059Z","user_id":"user_669","product_id":"books_biography_15","quantity":4,"price":195.35,"category":"Books"}
+{"key":"user_935","kafka_timestamp":"2025-10-08T04:50:31.517Z","timestamp":"2025-10-08T04:50:31.517Z","user_id":"user_935","product_id":"books_novel_65","quantity":1,"price":253.4,"category":"Books"}
+{"key":"user_10","kafka_timestamp":"2025-10-08T04:50:36.103Z","timestamp":"2025-10-08T04:50:36.103Z","user_id":"user_10","product_id":"sports_equipment_87","quantity":1,"price":467.46,"category":"Sports"}

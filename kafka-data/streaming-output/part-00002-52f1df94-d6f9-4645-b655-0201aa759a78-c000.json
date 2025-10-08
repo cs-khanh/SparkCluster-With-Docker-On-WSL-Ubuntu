@@ -1,0 +1,6 @@
+{"key":"user_429","kafka_timestamp":"2025-10-08T04:30:00.570Z","timestamp":"2025-10-08T04:30:00.570Z","user_id":"user_429","product_id":"home_furniture_49","quantity":4,"price":270.83,"category":"Home"}
+{"key":"user_439","kafka_timestamp":"2025-10-08T04:30:11.339Z","timestamp":"2025-10-08T04:30:11.339Z","user_id":"user_439","product_id":"electronics_phone_24","quantity":3,"price":233.92,"category":"Electronics"}
+{"key":"user_650","kafka_timestamp":"2025-10-08T04:30:16.304Z","timestamp":"2025-10-08T04:30:16.304Z","user_id":"user_650","product_id":"sports_clothing_22","quantity":5,"price":467.92,"category":"Sports"}
+{"key":"user_978","kafka_timestamp":"2025-10-08T04:30:22.260Z","timestamp":"2025-10-08T04:30:22.260Z","user_id":"user_978","product_id":"electronics_laptop_20","quantity":4,"price":295.66,"category":"Electronics"}
+{"key":"user_732","kafka_timestamp":"2025-10-08T04:30:23.475Z","timestamp":"2025-10-08T04:30:23.475Z","user_id":"user_732","product_id":"sports_shoes_69","quantity":5,"price":464.99,"category":"Sports"}
+{"key":"user_113","kafka_timestamp":"2025-10-08T04:30:25.250Z","timestamp":"2025-10-08T04:30:25.249Z","user_id":"user_113","product_id":"food_vegetables_63","quantity":5,"price":137.04,"category":"Food"}

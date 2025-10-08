@@ -1,15 +1,25 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, count, avg, desc
+import logging
 
-# Khởi tạo Spark Session
+# Thiết lập log level để giảm log
+logging.getLogger("org").setLevel(logging.ERROR)
+logging.getLogger("akka").setLevel(logging.ERROR)
+
+# Khởi tạo Spark Session với cấu hình tối ưu
 spark = SparkSession.builder \
     .appName("CSV Data Processing") \
     .getOrCreate()
 
 try:
-    # Đọc dữ liệu CSV từ thư mục data
+    # Đọc dữ liệu CSV từ thư mục data với các tùy chọn tối ưu
     print("Reading CSV data...")
-    df = spark.read.option("header", "true").option("inferSchema", "true").csv("/opt/spark/data/users.csv")
+    df = spark.read \
+        .option("header", "true") \
+        .option("inferSchema", "true") \
+        .option("mode", "PERMISSIVE") \
+        .option("nullValue", "") \
+        .csv("/opt/spark/data/users.csv")
     
     print(f"Loaded DataFrame with {df.count()} rows")
     print("Schema:")

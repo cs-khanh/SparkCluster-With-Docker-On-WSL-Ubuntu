@@ -1,0 +1,4 @@
+{"key":"user_90","kafka_timestamp":"2025-10-08T04:51:02.480Z","timestamp":"2025-10-08T04:51:02.480Z","user_id":"user_90","product_id":"sports_accessories_70","quantity":3,"price":472.11,"category":"Sports"}
+{"key":"user_385","kafka_timestamp":"2025-10-08T04:51:06.738Z","timestamp":"2025-10-08T04:51:06.738Z","user_id":"user_385","product_id":"food_snacks_34","quantity":1,"price":99.34,"category":"Food"}
+{"key":"user_293","kafka_timestamp":"2025-10-08T04:51:17.619Z","timestamp":"2025-10-08T04:51:17.619Z","user_id":"user_293","product_id":"electronics_phone_43","quantity":1,"price":385.15,"category":"Electronics"}
+{"key":"user_557","kafka_timestamp":"2025-10-08T04:51:27.267Z","timestamp":"2025-10-08T04:51:27.266Z","user_id":"user_557","product_id":"food_vegetables_56","quantity":4,"price":134.14,"category":"Food"}

@@ -15,11 +15,12 @@ services:
       - ./book_data:/opt/spark/data 
       - ./spark-apps:/opt/spark/apps
       - ./spark-logs:/opt/spark-events
+      - ./kafka-data:/opt/kafka-data
     env_file:
       - .env.spark
     ports:
-      - "0.0.0.0:8080:8080"  # Spark Master Web UI
-      - "0.0.0.0:7077:7077"  # Spark Master Port
+      - "8080:8080"  # Spark Master Web UI
+      - "7077:7077"  # Spark Master Port
 
   spark-history-server:
     container_name: da-spark-history
@@ -32,7 +33,7 @@ services:
     env_file:
       - .env.spark
     ports:
-      - "0.0.0.0:18080:18080"  # Spark History Server Web UI
+      - "18080:18080"  # Spark History Server Web UI
 
   spark-worker:
     image: da-spark-image
@@ -49,10 +50,41 @@ services:
       - ./book_data:/opt/spark/data
       - ./spark-apps:/opt/spark/apps
       - ./spark-logs:/opt/spark-events
+      - ./kafka-data:/opt/kafka-data
     ports:
       # Sử dụng ports dynamic để tránh xung đột 
       # Docker sẽ tự động map cổng nội bộ 8081 ra cổng host bất kỳ
       - "8081"
 
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    container_name: sparkcluster-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+  kafka:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: sparkcluster-kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT 
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    volumes:
+      - ./kafka-data:/var/lib/kafka/data
+      - ./kafka-logs:/var/log/kafka
+
 volumes:
   spark-logs:
+  kafka-data:
+  kafka-logs:
+

@@ -1,0 +1,6 @@
+{"key":"user_495","kafka_timestamp":"2025-10-08T04:32:33.711Z","timestamp":"2025-10-08T04:32:33.711Z","user_id":"user_495","product_id":"books_comic_66","quantity":4,"price":43.13,"category":"Books"}
+{"key":"user_905","kafka_timestamp":"2025-10-08T04:32:37.334Z","timestamp":"2025-10-08T04:32:37.334Z","user_id":"user_905","product_id":"books_textbook_75","quantity":4,"price":217.53,"category":"Books"}
+{"key":"user_106","kafka_timestamp":"2025-10-08T04:32:38.428Z","timestamp":"2025-10-08T04:32:38.428Z","user_id":"user_106","product_id":"food_meat_95","quantity":5,"price":47.75,"category":"Food"}
+{"key":"user_220","kafka_timestamp":"2025-10-08T04:32:39.509Z","timestamp":"2025-10-08T04:32:39.509Z","user_id":"user_220","product_id":"electronics_tablet_78","quantity":5,"price":440.98,"category":"Electronics"}
+{"key":"user_184","kafka_timestamp":"2025-10-08T04:32:42.147Z","timestamp":"2025-10-08T04:32:42.147Z","user_id":"user_184","product_id":"books_comic_39","quantity":2,"price":14.41,"category":"Books"}
+{"key":"user_497","kafka_timestamp":"2025-10-08T04:32:48.044Z","timestamp":"2025-10-08T04:32:48.044Z","user_id":"user_497","product_id":"sports_shoes_40","quantity":1,"price":60.65,"category":"Sports"}

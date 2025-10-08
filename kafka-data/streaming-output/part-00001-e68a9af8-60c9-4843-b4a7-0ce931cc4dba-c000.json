@@ -1,0 +1,4 @@
+{"key":"user_506","kafka_timestamp":"2025-10-08T04:30:42.545Z","timestamp":"2025-10-08T04:30:42.545Z","user_id":"user_506","product_id":"food_snacks_49","quantity":2,"price":51.56,"category":"Food"}
+{"key":"user_842","kafka_timestamp":"2025-10-08T04:30:44.658Z","timestamp":"2025-10-08T04:30:44.658Z","user_id":"user_842","product_id":"home_furniture_69","quantity":1,"price":195.02,"category":"Home"}
+{"key":"user_498","kafka_timestamp":"2025-10-08T04:30:47.168Z","timestamp":"2025-10-08T04:30:47.168Z","user_id":"user_498","product_id":"sports_ball_61","quantity":5,"price":254.05,"category":"Sports"}
+{"key":"user_325","kafka_timestamp":"2025-10-08T04:30:55.802Z","timestamp":"2025-10-08T04:30:55.801Z","user_id":"user_325","product_id":"books_textbook_50","quantity":5,"price":34.36,"category":"Books"}

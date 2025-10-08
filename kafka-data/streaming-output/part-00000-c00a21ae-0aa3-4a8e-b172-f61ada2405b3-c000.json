@@ -1,0 +1,4 @@
+{"key":"user_227","kafka_timestamp":"2025-10-08T04:51:15.005Z","timestamp":"2025-10-08T04:51:15.005Z","user_id":"user_227","product_id":"food_meat_91","quantity":1,"price":266.19,"category":"Food"}
+{"key":"user_147","kafka_timestamp":"2025-10-08T04:51:19.497Z","timestamp":"2025-10-08T04:51:19.497Z","user_id":"user_147","product_id":"books_comic_34","quantity":4,"price":320.2,"category":"Books"}
+{"key":"user_508","kafka_timestamp":"2025-10-08T04:51:21.387Z","timestamp":"2025-10-08T04:51:21.386Z","user_id":"user_508","product_id":"books_magazine_84","quantity":3,"price":241.79,"category":"Books"}
+{"key":"user_955","kafka_timestamp":"2025-10-08T04:51:29.828Z","timestamp":"2025-10-08T04:51:29.828Z","user_id":"user_955","product_id":"clothing_jacket_41","quantity":1,"price":301.75,"category":"Clothing"}

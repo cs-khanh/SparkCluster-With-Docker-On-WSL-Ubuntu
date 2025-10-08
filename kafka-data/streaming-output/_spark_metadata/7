@@ -1,0 +1,4 @@
+v1
+{"path":"file:///opt/kafka-data/streaming-output/part-00000-a6ee8b3a-736a-48ba-9831-6ed74120cfd2-c000.json","size":815,"isDir":false,"modificationTime":1759897980658,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/streaming-output/part-00001-2ff8066a-cd38-4a4a-ba46-bb5df8ca39a7-c000.json","size":408,"isDir":false,"modificationTime":1759897980728,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/streaming-output/part-00002-0fe3cfd9-1d86-4223-afbc-adda2f06c4e8-c000.json","size":1217,"isDir":false,"modificationTime":1759897980673,"blockReplication":1,"blockSize":33554432,"action":"add"}

@@ -1,0 +1,2 @@
+{"key":"user_906","kafka_timestamp":"2025-10-08T04:32:30.367Z","timestamp":"2025-10-08T04:32:30.367Z","user_id":"user_906","product_id":"sports_accessories_43","quantity":3,"price":292.66,"category":"Sports"}
+{"key":"user_840","kafka_timestamp":"2025-10-08T04:32:31.452Z","timestamp":"2025-10-08T04:32:31.452Z","user_id":"user_840","product_id":"home_kitchen_41","quantity":4,"price":39.4,"category":"Home"}

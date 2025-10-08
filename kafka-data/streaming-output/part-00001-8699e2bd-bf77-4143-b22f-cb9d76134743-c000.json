@@ -1,0 +1,4 @@
+{"key":"user_62","kafka_timestamp":"2025-10-08T04:51:05.472Z","timestamp":"2025-10-08T04:51:05.472Z","user_id":"user_62","product_id":"electronics_tablet_91","quantity":5,"price":135.1,"category":"Electronics"}
+{"key":"user_118","kafka_timestamp":"2025-10-08T04:51:09.389Z","timestamp":"2025-10-08T04:51:09.389Z","user_id":"user_118","product_id":"electronics_laptop_87","quantity":5,"price":496.82,"category":"Electronics"}
+{"key":"user_230","kafka_timestamp":"2025-10-08T04:51:12.578Z","timestamp":"2025-10-08T04:51:12.577Z","user_id":"user_230","product_id":"books_magazine_52","quantity":4,"price":308.27,"category":"Books"}
+{"key":"user_30","kafka_timestamp":"2025-10-08T04:51:24.294Z","timestamp":"2025-10-08T04:51:24.294Z","user_id":"user_30","product_id":"books_textbook_6","quantity":4,"price":291.24,"category":"Books"}

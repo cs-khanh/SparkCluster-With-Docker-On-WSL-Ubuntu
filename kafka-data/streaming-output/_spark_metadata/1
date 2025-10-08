@@ -1,0 +1,3 @@
+v1
+{"path":"file:///opt/kafka-data/streaming-output/part-00000-044df37e-422b-42a5-95f5-26a135fabb6e-c000.json","size":217,"isDir":false,"modificationTime":1759897813221,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/streaming-output/part-00001-405de7d1-bb3f-4490-951a-5070f7856337-c000.json","size":404,"isDir":false,"modificationTime":1759897813401,"blockReplication":1,"blockSize":33554432,"action":"add"}

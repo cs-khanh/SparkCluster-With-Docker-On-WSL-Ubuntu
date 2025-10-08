@@ -1,8 +1,8 @@
-FROM python:3.11-bullseye as spark-base
+FROM python:3.11-bullseye
 
 ARG SPARK_VERSION=3.4.0
 
-RUN apt-get update && \
+RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         sudo \
         curl \
@@ -24,6 +24,12 @@ RUN mkdir -p ${HADOOP_HOME} && mkdir -p ${SPARK_HOME}
 
 WORKDIR ${SPARK_HOME}
 
+# Sao chép file Spark từ máy local vào container
+# COPY ./lib-spark/spark-3.4.0-bin-hadoop3.tgz /tmp/
+
+# Giải nén Spark vào /opt/spark
+# RUN tar -xvzf /tmp/spark-${SPARK_VERSION}-bin-hadoop3.tgz --directory /opt/spark --strip-components 1 && \
+#     rm -f /tmp/spark-${SPARK_VERSION}-bin-hadoop3.tgz
 RUN curl -L https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz -o spark-${SPARK_VERSION}-bin-hadoop3.tgz && \
     tar -xvzf spark-${SPARK_VERSION}-bin-hadoop3.tgz --directory /opt/spark --strip-components 1 && \
     rm -rf spark-${SPARK_VERSION}-bin-hadoop3.tgz

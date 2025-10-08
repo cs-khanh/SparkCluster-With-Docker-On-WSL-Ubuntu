@@ -3,3 +3,5 @@ pandas
 pyarrow
 numpy
 pyspark
+kafka-python
+py4j

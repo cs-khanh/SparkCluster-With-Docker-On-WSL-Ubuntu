@@ -1,0 +1,8 @@
+{"key":"user_159","kafka_timestamp":"2025-10-08T04:32:01.985Z","timestamp":"2025-10-08T04:32:01.985Z","user_id":"user_159","product_id":"clothing_shoes_15","quantity":3,"price":378.3,"category":"Clothing"}
+{"key":"user_125","kafka_timestamp":"2025-10-08T04:32:09.527Z","timestamp":"2025-10-08T04:32:09.527Z","user_id":"user_125","product_id":"clothing_shirt_88","quantity":4,"price":46.45,"category":"Clothing"}
+{"key":"user_334","kafka_timestamp":"2025-10-08T04:32:15.278Z","timestamp":"2025-10-08T04:32:15.278Z","user_id":"user_334","product_id":"sports_clothing_46","quantity":3,"price":344.24,"category":"Sports"}
+{"key":"user_219","kafka_timestamp":"2025-10-08T04:32:16.320Z","timestamp":"2025-10-08T04:32:16.320Z","user_id":"user_219","product_id":"clothing_shirt_94","quantity":1,"price":144.11,"category":"Clothing"}
+{"key":"user_334","kafka_timestamp":"2025-10-08T04:32:20.020Z","timestamp":"2025-10-08T04:32:20.020Z","user_id":"user_334","product_id":"electronics_camera_44","quantity":5,"price":60.26,"category":"Electronics"}
+{"key":"user_579","kafka_timestamp":"2025-10-08T04:32:21.752Z","timestamp":"2025-10-08T04:32:21.751Z","user_id":"user_579","product_id":"sports_shoes_25","quantity":5,"price":181.71,"category":"Sports"}
+{"key":"user_780","kafka_timestamp":"2025-10-08T04:32:25.402Z","timestamp":"2025-10-08T04:32:25.401Z","user_id":"user_780","product_id":"home_decoration_57","quantity":5,"price":74.5,"category":"Home"}
+{"key":"user_74","kafka_timestamp":"2025-10-08T04:32:28.234Z","timestamp":"2025-10-08T04:32:28.233Z","user_id":"user_74","product_id":"home_lighting_26","quantity":5,"price":379.13,"category":"Home"}

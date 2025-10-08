@@ -1,0 +1,2 @@
+{"key":"user_704","kafka_timestamp":"2025-10-08T04:31:32.700Z","timestamp":"2025-10-08T04:31:32.700Z","user_id":"user_704","product_id":"home_furniture_75","quantity":5,"price":390.44,"category":"Home"}
+{"key":"user_870","kafka_timestamp":"2025-10-08T04:31:47.086Z","timestamp":"2025-10-08T04:31:47.086Z","user_id":"user_870","product_id":"sports_ball_60","quantity":1,"price":433.26,"category":"Sports"}

@@ -1,0 +1,5 @@
+{"key":"user_9","kafka_timestamp":"2025-10-08T04:32:05.951Z","timestamp":"2025-10-08T04:32:05.950Z","user_id":"user_9","product_id":"clothing_shirt_77","quantity":3,"price":224.02,"category":"Clothing"}
+{"key":"user_769","kafka_timestamp":"2025-10-08T04:32:08.275Z","timestamp":"2025-10-08T04:32:08.275Z","user_id":"user_769","product_id":"home_lighting_53","quantity":1,"price":226.95,"category":"Home"}
+{"key":"user_662","kafka_timestamp":"2025-10-08T04:32:11.464Z","timestamp":"2025-10-08T04:32:11.464Z","user_id":"user_662","product_id":"home_decoration_96","quantity":4,"price":467.5,"category":"Home"}
+{"key":"user_353","kafka_timestamp":"2025-10-08T04:32:12.696Z","timestamp":"2025-10-08T04:32:12.696Z","user_id":"user_353","product_id":"electronics_laptop_95","quantity":1,"price":54.53,"category":"Electronics"}
+{"key":"user_857","kafka_timestamp":"2025-10-08T04:32:23.016Z","timestamp":"2025-10-08T04:32:23.016Z","user_id":"user_857","product_id":"books_magazine_34","quantity":4,"price":59.33,"category":"Books"}

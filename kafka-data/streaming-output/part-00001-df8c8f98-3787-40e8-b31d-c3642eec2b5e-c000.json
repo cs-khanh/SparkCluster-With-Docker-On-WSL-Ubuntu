@@ -1,0 +1,5 @@
+{"key":"user_21","kafka_timestamp":"2025-10-08T04:50:26.795Z","timestamp":"2025-10-08T04:50:26.795Z","user_id":"user_21","product_id":"books_biography_54","quantity":4,"price":498.15,"category":"Books"}
+{"key":"user_752","kafka_timestamp":"2025-10-08T04:50:33.833Z","timestamp":"2025-10-08T04:50:33.833Z","user_id":"user_752","product_id":"food_snacks_100","quantity":4,"price":140.19,"category":"Food"}
+{"key":"user_747","kafka_timestamp":"2025-10-08T04:50:41.826Z","timestamp":"2025-10-08T04:50:41.826Z","user_id":"user_747","product_id":"clothing_shirt_27","quantity":2,"price":400.46,"category":"Clothing"}
+{"key":"user_647","kafka_timestamp":"2025-10-08T04:50:43.034Z","timestamp":"2025-10-08T04:50:43.034Z","user_id":"user_647","product_id":"sports_ball_78","quantity":5,"price":242.36,"category":"Sports"}
+{"key":"user_676","kafka_timestamp":"2025-10-08T04:50:44.990Z","timestamp":"2025-10-08T04:50:44.990Z","user_id":"user_676","product_id":"food_vegetables_10","quantity":5,"price":238.88,"category":"Food"}

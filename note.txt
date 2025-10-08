@@ -1,0 +1,30 @@
+# Các lệnh làm sạch Docker cache
+
+## Các lệnh cơ bản để dọn dẹp Docker
+docker builder prune -a     # Xóa tất cả cache build không sử dụng
+docker volume prune -f      # Xóa tất cả volume không được sử dụng
+docker container prune -f   # Xóa tất cả container đã dừng
+docker image prune -a       # Xóa tất cả image không sử dụng (không có container nào sử dụng)
+docker rmi <id>             # Xóa một image cụ thể theo ID
+
+## Các lệnh mở rộng
+docker system prune -a --volumes  # Xóa tất cả container dừng, network không sử dụng, image dangling, build cache, volume không sử dụng
+
+## Lệnh kiểm tra dung lượng Docker đang sử dụng
+docker system df            # Hiển thị thông tin về dung lượng đang sử dụng
+docker system df -v         # Hiển thị chi tiết về dung lượng đang sử dụng
+
+## Các lệnh làm sạch cho Spark Cluster
+make clean                  # Làm sạch các container và volume từ docker-compose
+make force-down             # Dừng tất cả container và xóa toàn bộ volume (sử dụng khi gặp lỗi)
+make clean-streaming-data   # Xóa tất cả dữ liệu streaming, windowed-analytics và checkpoints
+
+## Làm sạch WSL (nếu đang sử dụng)
+wsl --shutdown              # Tắt WSL
+wsl --terminate Ubuntu      # Dừng và tắt phân phối Ubuntu
+diskpart                    # Mở diskpart để làm sạch file .vhdx nếu cần
+
+## Khôi phục hệ thống sau khi làm sạch
+make build                  # Rebuild Docker image
+make run-d                  # Khởi động lại cluster ở chế độ detached
+make streaming-start        # Khởi động lại streaming application

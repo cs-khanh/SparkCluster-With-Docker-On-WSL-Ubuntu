@@ -1,0 +1,8 @@
+v1
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00000-c48ff1ed-01f5-4bb5-b5fe-42cbcea83a96-c000.json","size":0,"isDir":false,"modificationTime":1759899300384,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00014-0cdac767-9138-443f-99f1-46e1a56d9c22-c000.json","size":172,"isDir":false,"modificationTime":1759899300648,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00028-255f998a-1803-4521-87f9-edaae89e7d7c-c000.json","size":165,"isDir":false,"modificationTime":1759899300932,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00077-e5296593-8a8b-4a88-9054-97a5794e9a6c-c000.json","size":167,"isDir":false,"modificationTime":1759899301546,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00101-dc5a8b5a-6277-4ec6-bca9-1e9a8f80e830-c000.json","size":167,"isDir":false,"modificationTime":1759899301915,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00114-92e2fba9-68f3-4375-b204-22b5b287d141-c000.json","size":167,"isDir":false,"modificationTime":1759899302522,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///opt/kafka-data/windowed-analytics/part-00176-c1186580-4717-4d3d-b1c7-d80d48f7d07b-c000.json","size":163,"isDir":false,"modificationTime":1759899304615,"blockReplication":1,"blockSize":33554432,"action":"add"}

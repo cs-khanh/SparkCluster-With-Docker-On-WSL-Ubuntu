@@ -39,8 +39,9 @@ try:
     print(f"Filtered rows with value > 500000: {filtered_df.count()}")
     
     # Thống kê theo nhóm
+    from pyspark.sql.functions import sum as sum_
     grouped_df = df.groupBy("name").agg(count("id").alias("count"), 
-                                         (col("value") / 1000).alias("value_k"))
+                                         (sum_("value") / 1000).alias("value_k"))
     
     print("Group by results:")
     grouped_df.orderBy(col("count").desc()).show(10)
@@ -49,11 +50,34 @@ try:
     output_path = "/opt/spark/data/example_output"
     print(f"Saving results to {output_path}")
     
-    grouped_df.write.mode("overwrite").parquet(output_path)
+    # Hiển thị số lượng partition để debug
+    print(f"DataFrame has {grouped_df.rdd.getNumPartitions()} partitions")
     
-    # Đọc lại dữ liệu để kiểm tra
-    read_df = spark.read.parquet(output_path)
-    print(f"Read back data from {output_path}, row count: {read_df.count()}")
+    try:
+        # Giảm số lượng partition để tránh lỗi khi ghi nhiều file nhỏ
+        print("Coalescing partitions to 1 for simpler output...")
+        grouped_df = grouped_df.coalesce(1)
+        print("Writing data to parquet files...")
+        grouped_df.write.mode("overwrite").parquet(output_path)
+        print("Successfully wrote data to parquet files!")
+        
+        # Kiểm tra output đã tạo
+        import os
+        if os.path.exists(output_path):
+            files = os.listdir(output_path)
+            print(f"Output directory contains {len(files)} files/directories:")
+            for f in files:
+                print(f"  - {f}")
+        else:
+            print(f"WARNING: Output directory {output_path} does not exist after write operation!")
+        
+        # Đọc lại dữ liệu để kiểm tra
+        read_df = spark.read.parquet(output_path)
+        print(f"Read back data from {output_path}, row count: {read_df.count()}")
+    except Exception as e:
+        print(f"ERROR writing to {output_path}: {e}")
+        import traceback
+        traceback.print_exc()
     
     # Cố tình tạo ra một thao tác tốn tài nguyên để thấy được Spark xử lý phân tán
     print("Running a resource-intensive operation...")

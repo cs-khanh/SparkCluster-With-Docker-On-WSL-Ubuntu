@@ -1,0 +1,5 @@
+{"key":"user_972","kafka_timestamp":"2025-10-08T04:30:31.381Z","timestamp":"2025-10-08T04:30:31.381Z","user_id":"user_972","product_id":"home_furniture_11","quantity":5,"price":43.93,"category":"Home"}
+{"key":"user_583","kafka_timestamp":"2025-10-08T04:30:35.539Z","timestamp":"2025-10-08T04:30:35.539Z","user_id":"user_583","product_id":"electronics_headphones_92","quantity":2,"price":439.05,"category":"Electronics"}
+{"key":"user_554","kafka_timestamp":"2025-10-08T04:30:37.257Z","timestamp":"2025-10-08T04:30:37.257Z","user_id":"user_554","product_id":"sports_equipment_16","quantity":4,"price":261.2,"category":"Sports"}
+{"key":"user_332","kafka_timestamp":"2025-10-08T04:30:49.142Z","timestamp":"2025-10-08T04:30:49.142Z","user_id":"user_332","product_id":"sports_equipment_20","quantity":5,"price":222.95,"category":"Sports"}
+{"key":"user_478","kafka_timestamp":"2025-10-08T04:30:58.074Z","timestamp":"2025-10-08T04:30:58.074Z","user_id":"user_478","product_id":"books_magazine_61","quantity":4,"price":405.48,"category":"Books"}

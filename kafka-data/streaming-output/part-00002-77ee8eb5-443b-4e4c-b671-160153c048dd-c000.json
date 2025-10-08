@@ -1,0 +1,2 @@
+{"key":"user_80","kafka_timestamp":"2025-10-08T04:53:10.346Z","timestamp":"2025-10-08T04:53:10.346Z","user_id":"user_80","product_id":"sports_clothing_56","quantity":2,"price":120.73,"category":"Sports"}
+{"key":"user_192","kafka_timestamp":"2025-10-08T04:53:15.261Z","timestamp":"2025-10-08T04:53:15.261Z","user_id":"user_192","product_id":"electronics_laptop_2","quantity":1,"price":299.22,"category":"Electronics"}
